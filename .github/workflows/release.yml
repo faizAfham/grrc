@@ -1,40 +1,33 @@
-name: Build Linux Binary
+name: Build Static Linux Binary
 
 on:
   push:
     tags:
-      - 'v*'  
-      
-permissions:
-  contents: write
+      - 'v*'
 
 jobs:
   build:
-    name: Build and Release Binary
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
+      - name: Install Rust with MUSL target
+        uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          profile: minimal
-          override: true
+          targets: x86_64-unknown-linux-musl
 
-      - name: Build release binary
-        run: cargo build --release
+      - name: Install musl-tools
+        run: sudo apt-get update && sudo apt-get install -y musl-tools
 
-      - name: Upload binary to GitHub Releases
+      - name: Build statically linked binary
+        run: cargo build --release --target x86_64-unknown-linux-musl
+
+      - name: Upload binary to release
         uses: softprops/action-gh-release@v2
         with:
-          files: target/release/grrs
+          files: target/x86_64-unknown-linux-musl/release/grrs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-
 
