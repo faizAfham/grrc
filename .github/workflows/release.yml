@@ -3,14 +3,16 @@ name: Build Linux Binary
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*'  # Triggers only when you push a tag like v1.0.0
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -18,13 +20,25 @@ jobs:
           profile: minimal
           override: true
 
+      - name: Show Rust version
+        run: rustc --version
+
       - name: Build release binary
         run: cargo build --release
 
-      - name: Upload binary
-        uses: softprops/action-gh-release@v1
+      - name: Verify binary exists
+        run: ls -lh target/release/grrc
+
+      - name: Upload binary to GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
           files: target/release/grrc
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          [48;40;142;1760;2840tGITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+
+
 
