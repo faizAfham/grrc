@@ -1,20 +1,16 @@
-# grrc
-grep like cli tool made in rust
+# grrs
 
-Installation
-You can download the latest prebuilt binary for Linux from the Releases section.
+A `grep`-like CLI tool built in Rust.
 
+---
+
+##  Installation
+
+You can download the latest **prebuilt Linux binary** from the [Releases](https://github.com/faizAfham/grrs/releases) section.
+
+###  Step-by-step (No sudo required if `/usr/local/bin` is writable):
+
+```bash
 wget https://github.com/faizAfham/grrs/releases/download/v1.0.3/grrs -O /usr/local/bin/grrs
 chmod +x /usr/local/bin/grrs
-
-That’s it! Now you can run the tool globally using:
-grrs
-
-grrs <pattern> <file>
-
-Make sure you have permission to write to /usr/local/bin. You may need to prepend sudo:
-sudo wget https://github.com/faizAfham/grrs/releases/download/v1.0.3/grrs -O /usr/local/bin/grrs
-sudo chmod +x /usr/local/bin/grrs
-
-
 
