@@ -11,7 +11,11 @@ You can download the latest **prebuilt Linux binary** from the [Releases](https:
 ###  Step-by-step (No sudo required if `/usr/local/bin` is writable):
 
 ```bash
-wget https://github.com/faizAfham/grrs/releases/download/v1.0.3/grrs -O /usr/local/bin/grrs
+wget https://github.com/faizAfham/grrs/releases/download/v1.0.5/grrs -O /usr/local/bin/grrs
 chmod +x /usr/local/bin/grrs
 ```
 otherwise use sudo
+
+## Once Installed 
+
+grrs <pattern> <file>
