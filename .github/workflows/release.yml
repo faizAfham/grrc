@@ -27,7 +27,7 @@ jobs:
       - name: Upload binary to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          files: target/release/grrc
+          files: target/release/grrs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
