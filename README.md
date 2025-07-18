@@ -6,7 +6,7 @@ A `grep`-like CLI tool built in Rust.
 
 ##  Installation
 
-You can download the latest **prebuilt Linux binary** from the [Releases](https://github.com/faizAfham/grrs/releases) section.
+You can download the latest **prebuilt Linux binary** from the [Releases]([https://github.com/faizAfham/grrs/releases](https://github.com/faizAfham/grrc/releases)) section.
 
 ###  Step-by-step (No sudo required if `/usr/local/bin` is writable):
 
