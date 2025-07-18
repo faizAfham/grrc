@@ -13,4 +13,5 @@ You can download the latest **prebuilt Linux binary** from the [Releases](https:
 ```bash
 wget https://github.com/faizAfham/grrs/releases/download/v1.0.3/grrs -O /usr/local/bin/grrs
 chmod +x /usr/local/bin/grrs
-
+```
+otherwise use sudo
