@@ -18,4 +18,6 @@ otherwise use sudo
 
 ## Once Installed 
 
+```bash
 grrs <pattern> <file>
+```
